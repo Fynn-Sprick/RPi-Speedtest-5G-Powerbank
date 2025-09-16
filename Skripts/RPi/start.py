@@ -3,6 +3,8 @@ import requests
 import board, digitalio
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
+from datetime import datetime, timedelta
+
 
 RESET_PIN = digitalio.DigitalInOut(board.D4)
 i2c = board.I2C()
@@ -16,8 +18,8 @@ font_normal = ImageFont.truetype(
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14
 )
 
-SPEEDTEST_API_URL = "http://192.168.20.10:8080/api/v1/results/latest"
-SPEEDTEST_API_TOKEN = "Yhnyke53IT8tZhkSnZJIEGMu2wHV4p9ltGo7tjHta22dde24"
+SPEEDTEST_API_URL = "http://172.20.0.10:80/api/v1/results/latest"
+SPEEDTEST_API_TOKEN = "vZ68XFzycVnON0OYZhhzEzQmvp6eVSmLWieAhGt62a070358"
 SPEEDTEST_HEADERS = {"Authorization": f"Bearer {SPEEDTEST_API_TOKEN}"}
 
 ROUTER_BASE = "https://192.168.253.1/api"
@@ -66,18 +68,36 @@ def router_enable_services():
         print("Fehler bei Router-API:", e)
 
 def fetch_speedtest_data():
-    try:
-        r = requests.get(SPEEDTEST_API_URL, headers=SPEEDTEST_HEADERS, timeout=5)
-        r.raise_for_status()
-        data = r.json().get("data", {})
-        created_at = str(data.get("created_at", "N/A"))
-        time_only = created_at.split(" ")[1] if " " in created_at else created_at
-        ping = str(data.get("ping", "N/A"))
-        download = str(data.get("download_bits_human", "N/A"))
-        upload = str(data.get("upload_bits_human", "N/A"))
-        return time_only, ping, download, upload
-    except Exception as e:
-        return "Error", "-", "-", "-"
+    while True:
+        try:
+            r = requests.get(SPEEDTEST_API_URL, headers=SPEEDTEST_HEADERS, timeout=5)
+            r.raise_for_status()
+            data = r.json().get("data", {})
+            created_at = str(data.get("updated_at", "N/A"))
+
+            # Zeit anpassen (+2h)
+            if created_at != "N/A" and " " in created_at:
+                dt = datetime.strptime(created_at, "%Y-%m-%d %H:%M:%S")
+                dt_plus2 = dt + timedelta(hours=2)
+                time_only = dt_plus2.strftime("%H:%M:%S")
+            else:
+                time_only = created_at
+
+            ping = data.get("ping", None)
+            download = str(data.get("download_bits_human", "N/A"))
+            upload = str(data.get("upload_bits_human", "N/A"))
+
+            # Prüfen ob Ping ungültig ist
+            if ping is None or ping == 0:
+                print("Ping = 0, versuche erneut...")
+                time.sleep(2)  # kleine Pause, um die API nicht zu überlasten
+                continue
+
+            return time_only, str(ping), download, upload
+
+        except Exception as e:
+            print("Fehler beim Speedtest:", e)
+            time.sleep(2)
 
 def display_on_oled(time_only, ping, download, upload):
     oled.fill(0)
