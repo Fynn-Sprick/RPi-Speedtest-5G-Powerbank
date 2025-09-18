@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.allinone.app-mergeReleaseResources-31:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/Users/fynnsprick/.gradle/caches/transforms-4/3bbabdbcb6d8dcdca3664b9c22f19c0b/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

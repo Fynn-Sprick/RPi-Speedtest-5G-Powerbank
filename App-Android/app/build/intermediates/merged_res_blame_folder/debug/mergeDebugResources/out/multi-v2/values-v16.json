@@ -1,18 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gpsinflux.app-mergeDebugResources-28:/values-v16/values-v16.xml",
+            "outputFile": "com.example.allinone.app-mergeDebugResources-31:/values-v16/values-v16.xml",
             "map": [
-                {
-                    "source": "/Users/fynnsprick/.gradle/caches/transforms-4/dfd0b78fa0622a77a4f902f5d97383db/transformed/core-1.9.0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
                 {
                     "source": "/Users/fynnsprick/.gradle/caches/transforms-4/3bbabdbcb6d8dcdca3664b9c22f19c0b/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/fynnsprick/.gradle/caches/transforms-4/ff8bf25122573f16c7b6e61de6a7619f/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

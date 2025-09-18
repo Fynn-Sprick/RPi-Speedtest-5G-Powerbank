@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gpsinflux.app-mergeDebugResources-28:/values-v24/values-v24.xml",
+            "outputFile": "com.example.allinone.app-mergeDebugResources-31:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/fynnsprick/.gradle/caches/transforms-4/e3c04c52ace744ca96f4c8c0dc65649b/transformed/material-1.9.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/fynnsprick/.gradle/caches/transforms-4/21cce582bb0973b439a1d8d3655ec0a6/transformed/material-1.11.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

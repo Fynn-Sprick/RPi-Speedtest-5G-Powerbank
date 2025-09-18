@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gpsinflux.app-mergeDebugResources-28:/values-v17/values-v17.xml",
+            "outputFile": "com.example.allinone.app-mergeDebugResources-31:/values-v17/values-v17.xml",
             "map": [
                 {
                     "source": "/Users/fynnsprick/.gradle/caches/transforms-4/3bbabdbcb6d8dcdca3664b9c22f19c0b/transformed/appcompat-1.6.1/res/values-v17/values-v17.xml",

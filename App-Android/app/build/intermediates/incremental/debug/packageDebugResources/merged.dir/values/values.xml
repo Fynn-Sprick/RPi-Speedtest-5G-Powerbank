@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#121212</color>
+    <color name="colorOnSurface">#121212</color>
+    <color name="colorPrimary">#6750A4</color>
+    <color name="colorPrimaryVariant">#4F378B</color>
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <style name="Theme.AllInOneControlApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColorPrimary">@color/colorOnSurface</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+</resources>

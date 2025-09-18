@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/fynnsprick/Downloads/AllInOneControlApp_BUILD_OK_DayNightSystem/app"
+    name=":app"
+    type="APP"
+    maven="AllInOneControlApp:app:"
+    agpVersion="8.3.0"
+    buildFolder="build"
+    bootClassPath="/Users/fynnsprick/Library/Android/sdk/platforms/android-34/android.jar:/Users/fynnsprick/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
